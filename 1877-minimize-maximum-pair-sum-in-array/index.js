@@ -17,3 +17,39 @@ const minPairSum = nums => {
     }
     return max;
 };
+
+/*
+O(n) solution:
+ - use the fact that numbers are between 1 and 10^5
+ - create a frequency map of numbers
+ - use two pointers to match highest numbers with lowest numbers
+*/
+
+const MAXIMUM_VALUE = 10 ** 5;
+
+const minPairSum = nums => {
+    // create a frequency map for numbers between 1 and 10^5
+    let freq = new Array(MAXIMUM_VALUE + 1).fill(0);
+    nums.forEach(num => freq[num]++);
+
+    // use two pointers to match largest and smaller numbers until none are left
+    let left = 1,
+        right = MAXIMUM_VALUE,
+        max = 0;
+    while (left <= right) {
+        if (freq[left] === 0) {
+            left++;
+            continue;
+        }
+        if (freq[right] === 0) {
+            right--;
+            continue;
+        }
+        freq[left]--;
+        freq[right]--;
+        max = Math.max(max, left + right);
+    }
+    
+    // return the largest found sum
+    return max;
+};
