@@ -1,2 +1,3 @@
 # leetcode-javascript
-Simple and elegant solutions to Leetcode problems, with explanations
+
+Simple solutions to coding challenges from Leetcode, with simple explanations 
