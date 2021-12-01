@@ -18,4 +18,3 @@ const rob = nums => {
     }
     return prev1;
 };
-s
