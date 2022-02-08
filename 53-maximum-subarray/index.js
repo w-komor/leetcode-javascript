@@ -3,7 +3,7 @@
 53. Maximum Subarray
 https://leetcode.com/problems/maximum-subarray/
 
-// Kadane's Algorithm
+Kadane's Algorithm
 
 */
 
