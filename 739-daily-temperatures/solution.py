@@ -20,5 +20,9 @@ class Solution(object):
         for i, temp in enumerate(T):
             while stack and stack[-1]["temp"] < temp:
                 index = stack.pop()["i"]
+                result[index] = i - index
+            stack.append({ "i": i, "temp": temp })
+
+        return result
 
 
