@@ -17,25 +17,25 @@
 */
 
 const nextPermutation = nums => {
-    let k = nums.length - 2,
-        l = nums.length - 1;
+    let i = nums.length - 2,
+        j = nums.length - 1;
 
-    while (k >= 0 && nums[k + 1] <= nums[k]) {
-        k--;
+    while (i >= 0 && nums[i + 1] <= nums[i]) {
+        i--;
     }
 
-    if (k === -1) {
+    if (i === -1) {
         nums.reverse();
         return;
     }
 
-    while (nums[l] <= nums[k]) {
+    while (nums[j] <= nums[i]) {
         j--;
     }
-    [nums[k], nums[l]] = [nums[l], nums[k]];
+    [nums[i], nums[j]] = [nums[j], nums[i]];
 
-    let i = k + 1;
-    let j = nums.length - 1;
+    i++;
+    j = nums.length - 1;
 
     while (i < j) {
         [nums[i], nums[j]] = [nums[j], nums[i]];
