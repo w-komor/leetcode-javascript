@@ -9,7 +9,6 @@
 *
 */
 
-
 const maxDistToClosest = seats => {
     let left = new Array(seats.length).fill(0),
         right = new Array(seats.length).fill(0);
