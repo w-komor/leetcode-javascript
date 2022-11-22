@@ -37,4 +37,4 @@ const mergeKLists = lists => {
     }
 
     return amount > 0 ? lists[0] : null;
-}
+};
