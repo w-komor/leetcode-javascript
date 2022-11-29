@@ -13,14 +13,14 @@ const threeSumClosest = (nums, target) => {
     let closest = Infinity;
 
     for (let i = 0; i < nums.length - 2; i++) {
-        let ptr1 = i + 1,
-            ptr2 = nums.length - 1;
-        while (ptr1 < ptr2) {
-            let sum = nums[i] + nums[ptr1] + nums[ptr2];
+        let p1 = i + 1,
+            p2 = nums.length - 1;
+        while (p1 < p2) {
+            let sum = nums[i] + nums[p1] + nums[p2];
             if (Math.abs(target - sum) < Math.abs(target - closest)) {
                 closest = sum;
             }
-            sum > x ? ptr2-- : ptr1++;
+            sum > target ? p2-- : p1++;
         }
     }
 
