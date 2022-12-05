@@ -4,4 +4,4 @@
 *
 */
 
-const isPowerOfFour = n => Number.isInteger(n ** 0.25);
+const isPowerOfTwo = n => n <= 0 ? false : (n & (n - 1)) === 0;
