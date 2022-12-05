@@ -5,12 +5,12 @@
 */
 
 const middleNode = head => {
-    let full = head, half = head;
+    let mid = head;
     
-    while (full && full.next) {
-        half = half.next;
-        full = full.next.next;
+    while (head && head.next) {
+        mid = mid.next;
+        head = head.next.next;
     }
 
-    return half;
+    return mid;
 };
