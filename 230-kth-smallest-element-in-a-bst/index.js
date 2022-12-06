@@ -11,6 +11,5 @@ const inOrder = node => node ? [...inOrder(node.right), node.val, ...inOrder(nod
 
 const kthSmallest = (root, k) => {
     const sortedValues = inOrder(root);
-    console.log(sortedValues);
     return sortedValues[sortedValues.length - k];
 };
