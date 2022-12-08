@@ -7,15 +7,10 @@
 *
 */
 
-const leafValues = node => {
+const values = node => {
     if (!node) return [];
     if (!node.left && !node.right) return [node.val];
-    return [...leafValues(node.left), ...leafValues(node.right)];
+    return [...values(node.left), ...values(node.right)];
 }
 
-const leafSimilar = (root1, root2) => {
-    const leafVal1 = leafValues(root1);
-    const leafVal2 = leafValues(root2);
-    return leafVal1.length === leafVal2.length
-        && !leafVal1.some((val, index) => val !== leafVal2[index]);
-};
+const leafSimilar = (root1, root2) => JSON.stringify(values(root1)) === JSON.stringify(values(root2));
