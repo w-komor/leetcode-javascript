@@ -2,6 +2,10 @@
 * 886. Possible Bipartition
 * https://leetcode.com/problems/possible-bipartition/
 *
+* We do DFS on each node and assign one of two colors to it.
+* If both colors are available, we assign the smaller one.
+* If no colors are available, we return false.
+*
 */
 
 const possibleBipartition = (n, dislikes) => {
