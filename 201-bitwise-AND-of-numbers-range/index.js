@@ -10,7 +10,7 @@ const rangeBitwiseAnd = (left, right) => {
     while (left !== right) {
         left >>= 1;
         right >>= 1;
-        count++;
+        trailingZeros++;
     }
 
     return left << trailingZeros;
