@@ -8,11 +8,11 @@ They are the same as bisect_left and bisect_right in Python.
 
 ```javascript
 function bisectLeft(array, x) {
-    let low = 0, high = array.length;
+    let low = 0,
+        high = array.length;
     
     while (low < high) {
         let mid = Math.floor((low + high) / 2);
-        
         if (array[mid] < x) {
             low = mid + 1;
         } else {
@@ -28,11 +28,11 @@ function bisectLeft(array, x) {
 
 ```javascript
 function bisectRight(array, x) {
-    let low = 0, high = array.length;
+    let low = 0,
+        high = array.length;
     
     while (low < high) {
         let mid = Math.floor((low + high) / 2);
-        
         if (x < array[mid]) {
             high = mid;
         } else {
