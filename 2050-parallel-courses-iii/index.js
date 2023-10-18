@@ -15,7 +15,7 @@ const minimumTime = (n, relations, time) => {
     }
 
     // nodes with no prerequisites.
-    const queue = inDegree.map;
+    const queue = [];
     for (let i = 0; i < n; i++) {
         if (inDegree[i] === 0) {
             queue.push(i);
