@@ -17,3 +17,21 @@ const compactObject = obj => {
 
     return compacted;
 };
+
+// If mutable:
+
+const compactObject = obj => {
+    if (obj === null) return null;
+    if (Array.isArray(obj)) return obj.filter(Boolean).map(compactObject);
+    if (typeof obj !== "object") return obj;
+
+    for (const key in obj) {
+        if (obj[key]) {
+            obj[key] = compactObject(obj[key]);
+        } else {
+            delete obj[key];
+        }
+    }
+
+    return obj;
+};
